@@ -18,9 +18,9 @@ describe('test fundamentals', () => {
   it('checks accordion', () => {
     cy.visit('/fundamentals')
     cy.get('[data-testid="ExpandMoreIcon"]').first().click()
-    cy.get('p.MuiTypography-root.MuiTypography-body1').contains("Your tests will exist in a describe block.").should('be.visible')
+    cy.get('p').contains("Your tests will exist in a describe block.").should('be.visible')
     cy.get('[data-testid="ExpandMoreIcon"]').first().click()
-    cy.get('p.MuiTypography-root.MuiTypography-body1').contains("Your tests will exist in a describe block.").should('not.be.visible')
+    cy.get('p').contains("Your tests will exist in a describe block.").should('not.be.visible')
   })
   
   
