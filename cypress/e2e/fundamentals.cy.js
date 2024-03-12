@@ -21,6 +21,27 @@ describe('test fundamentals', () => {
     cy.get('p').contains("Your tests will exist in a describe block.").should('be.visible')
     cy.get('[data-testid="ExpandMoreIcon"]').first().click()
     cy.get('p').contains("Your tests will exist in a describe block.").should('not.be.visible')
+    cy.get('[data-testid="ExpandMoreIcon"]').eq(1).click()
+    cy.get('p').contains("Within your describe block, you will also have it blocks.").should('be.visible')
+    cy.get('[data-testid="ExpandMoreIcon"]').eq(1).click()
+    cy.get('p').contains("Within your describe block, you will also have it blocks.").should('not.be.visible')
+    cy.get('[data-testid="ExpandMoreIcon"]').eq(2).click()
+    cy.get('p').contains("Cypress gives you various commands to help you test.").should('be.visible')
+    cy.get('[data-testid="ExpandMoreIcon"]').eq(2).click()
+    cy.get('p').contains("Cypress gives you various commands to help you test.").should('not.be.visible')
+  })
+
+  it('checks multi accordions', () => {
+    cy.visit('/fundamentals')
+    cy.get('[data-testid="ExpandMoreIcon"]').first().click()
+    cy.get('p').contains("Your tests will exist in a describe block.").should('be.visible')
+    cy.get('[data-testid="ExpandMoreIcon"]').eq(1).click()
+    cy.get('p').contains("Your tests will exist in a describe block.").should('be.visible')
+    cy.get('p').contains("Within your describe block, you will also have it blocks.").should('be.visible')
+    cy.get('[data-testid="ExpandMoreIcon"]').eq(2).click()
+    cy.get('p').contains("Your tests will exist in a describe block.").should('be.visible')
+    cy.get('p').contains("Within your describe block, you will also have it blocks.").should('be.visible')
+    cy.get('p').contains("Cypress gives you various commands to help you test.").should('be.visible')
   })
   
   
