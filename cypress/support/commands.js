@@ -23,3 +23,16 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('addGrudge', (grudge) => {
+    cy.get('input[type="text"]').type(grudge)
+    cy.get('button').contains('Add Grudge').click()
+})
+
+Cypress.Commands.add('deleteGrudge', () => {
+    cy.get('li>button').contains('X').click()
+})
+
+Cypress.Commands.add('clickAccordion', (accNumber) => {
+    cy.get('[data-testid="ExpandMoreIcon"]').eq(accNumber).click()
+})
