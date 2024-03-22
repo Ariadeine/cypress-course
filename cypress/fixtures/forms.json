@@ -1,0 +1,21 @@
+[
+{
+  "email": "testmail.com",
+  "expected": "Successfully subbed: testmail.com!"
+},
+
+{
+  "email": "testmail@test.com",
+  "expected": "Successfully subbed: testmail@test.com!"
+},
+
+{
+  "email": "testmail.123",
+  "expected": "Invalid email: testmail.123!"
+},
+
+{
+  "email": "testmail@test",
+  "expected": "Invalid email: testmail@test!"
+}
+]
